@@ -9,6 +9,6 @@ with cte as
     from {{ source('demo', 'bike') }}
     where START_AT <> 'started_at'
 )
-
+ 
 select *
 from cte
