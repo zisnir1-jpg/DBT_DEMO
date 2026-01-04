@@ -7,8 +7,8 @@ with bike as
         ,start_station_name as station_name
         ,start_lat
         ,start_lng
-    from {{ source('demo', 'bike') }}
-    where start_at <> 'started_at'
+    from {{ ref('stg_bike') }}
+    where started_at <> 'started_at'
 )
  
 select *
